@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Header from './modules/Header';
+import Homepage from './sites/Homepage';
+import About from './sites/About';
+import NoPage from './sites/NoPage';
+import TenziesMain from './tenzies/TenziesMain';
+import Contact from './sites/Contact'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+
+export default function App(){
+
+    let languages = ['german', 'english']
+
+    //lazy state initialization
+    const [language, setLanguage] = useState(() => languages[0])
+
+    const[menueForSmallInput, setMenueForSmallInput] = useState(() => false)
+    
+    useEffect(() => {
+      console.log(`Menue outside?: ${menueForSmallInput}`)
+     //irgendwie verhindern dass, dass Ganzeseitemenü unten unten was rausgucken lässt
+    },[menueForSmallInput] )
+  
+    function changeLanguage(){
+      language === languages[0] ? setLanguage(()=>languages[1]) :  setLanguage(()=>languages[0]);
+    }
+
+    let stylesContentGerman = {
+        display: language === languages[0] ? 'block' : 'none'
+      }
+    
+      let stylesContentEnglish = {
+        display: language === languages[0] ? 'none' : 'block'
+      }
+
+      
+
+    return(
+        <BrowserRouter>
+            <Routes>
+                  <Route path="/" element={<Header setMenueForSmallInput={setMenueForSmallInput} stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish} toggleLanguage={changeLanguage}/>}>
+                    <Route exact index element={<Homepage stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
+                    <Route path="myproject" element={<About stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
+                    <Route path="*" element={<NoPage stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
+                    <Route path="tenzies" element={<TenziesMain stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
+                    <Route path="contact" element={<Contact stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
+                    {/* <Route path='snakegame' component={() => {window.location.href = 'http://snake-game.salevsky.net/'; return null;}}/> */}
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    )
 }
-
-export default App;

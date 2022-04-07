@@ -1,0 +1,41 @@
+.Grid-About{
+    display: grid;
+    /* grid-template-columns: 32% 32% 32%; */
+    row-gap: 1em;
+}
+
+.Grid-About > * {
+    border: .5px solid gray;
+    /* margin-left: 1.5em; */
+    padding: 0.8em;
+}
+
+.Grid-Item-About:first-child{
+    margin-left: 0;
+}
+
+.H3-About{
+    margin-top: 0;
+}
+
+.P-About{
+    margin-bottom: 0;
+}
+  
+/*********** tablet ***********/
+@media (min-width: 768px) and (max-width: 1279px){
+    .Grid-About{
+        /* display: grid; */
+        grid-template-columns: 48% 48%;
+        justify-content: space-between;
+    }
+}
+
+/*********** computer ***********/
+@media (min-width: 1279px){
+    .Grid-About{
+        /* display: grid; */
+        grid-template-columns: 32% 32% 32%;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,40 @@
+
+.TenziesMain{
+  /* background-color: #E5E5E5; */
+  /* height: 800px; */
+  /* border-radius: 1em; */
+  
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  row-gap: .7em;
+  
+} 
+
+.Tenzie-Game{
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: 100px 100px;
+  grid-gap: 10px;
+}
+
+.btn{
+  all: unset;
+  margin-top: 1em;
+  padding: 0 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color:  #E8C1B3;
+}
+
+.titleParagraph{
+  width: 500px;
+  margin-bottom: 3em;
+  margin-top: 0;;
+}

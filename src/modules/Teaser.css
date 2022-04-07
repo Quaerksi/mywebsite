@@ -1,0 +1,475 @@
+.Teaser{
+    background-image: url("../picture-teaser/bits.png");
+    height: 420px;
+    overflow-x: hidden;
+    
+}
+
+/* opacity background image */
+.Teaser::after{
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    
+}
+
+.Layout-container{
+    position: relative;
+    top: 90px;  
+    
+}
+
+.Teaser-small{
+    display: none;
+}
+
+.Arround{
+    /* background-color: #D3EBC5; */
+    background-color:rgba(211,235,197,0.7);
+}
+
+
+/* ************************************************************************************************* */
+/* smartphone */
+@media  (max-width: 767px){
+
+    .Spacer{
+        height: 90px;
+    }
+
+    .Teaser{
+        height:0px;
+    }
+
+    .Teaser-small{
+        /* all: unset; */
+        display:inline-block;
+        object-fit: contain;
+
+    }
+}
+
+/* ************************************************************************************************* */
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1279px){
+
+    .Layout-container{
+        width: 750px;
+        margin: 0 auto;
+    }
+
+    /* Logo JS */
+    .Logo-js{
+        position: absolute;
+
+        top: 0px;
+        left: 0px;
+
+        animation: x-animate-js 3s 1 linear 1.5s;
+        animation-fill-mode: forwards;
+    }
+
+    .Logo-js::after{
+
+        content: '';
+        display: block;
+
+        background-image: url("../picture-teaser/js.png");
+        background-size: cover;
+        
+        width: 60px;
+        height: 60px;
+
+        opacity: 0;
+        animation: y-animate-js 3s 1 linear 1.5s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes x-animate-js{
+        0%{
+            transform: translateX(-300px);
+        }
+        100%{
+            transform: translateX(330px);
+        }
+    }
+
+    @keyframes y-animate-js{
+        0%{
+            transform: translateY(150px)
+        }
+        50%{
+            transform: translateY(260px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(60px);
+        }
+    }
+
+    /* Logo CSS3 */
+    .Logo-css3{
+        position: absolute;
+
+        top: 180px;
+        left: -200px;  
+
+        background-image: url("../picture-teaser/css3.png");
+        background-size: cover;
+
+        width: 60px;
+        height: 90px;
+
+        opacity: 0;
+        animation: animate-css 2s ease-out;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes animate-css{
+        0%{
+            transform: translateX(-100px)
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(316px)
+        }
+    }
+
+    /* Logo gimp */
+    .Logo-gimp{
+        position: absolute;
+
+        top: 60px;
+        left: 100px;
+
+        background-image: url("../picture-teaser/gimp.png");
+        background-size: cover;
+
+        width: 100px;
+        height: 70px;
+
+        animation: animate-gimp 3s ease-out;
+    }
+
+    @keyframes animate-gimp{
+        0%{
+            opacity: 0;
+        }
+        100%{
+           transform: rotate(1800deg); 
+        }
+    }
+
+    /* Logo HTML5 */
+    .Logo-html5{
+        position: absolute;
+
+        top: 178px;
+        left: 330px;  
+
+        animation: x-animate-html 3s 1 linear 1.5s;
+        animation-fill-mode: forwards;
+    }
+
+    .Logo-html5::after{
+        content: "";
+        display: block;
+
+        background-image: url("../picture-teaser/html5.png");
+        background-size: cover;
+
+        width: 60px;
+        height: 90px;
+
+        opacity: 0;
+
+        animation: y-animate-html 3s 1 linear 1.5s;
+        animation-fill-mode: forwards;
+        
+    }
+
+    @keyframes x-animate-html{
+        0%{
+            transform: translateX(500px); 
+        }
+        100%{
+            
+        }
+    }
+
+    @keyframes y-animate-html{
+        0%{
+            transform: translateY(-30px)
+        }
+        50%{
+            transform: translateY(-170px)
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    /* Logo NPM */
+    .Logo-npm{
+        position: absolute;
+
+        top: 215px;
+        left: 520px;
+
+        background-image: url("../picture-teaser/npm.png");
+        background-size: cover;
+
+        width: 105px;
+        height: 40px;
+
+        opacity: 0;
+        animation: animate-npm 3s ease-out;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes animate-npm{
+        0%{
+            transform: rotate(0deg) translateX(-270px); 
+        }
+        
+        100%{
+            opacity: 1;
+            transform: rotate(1440deg) translateX(0px);
+        }
+    }
+
+    /* Logo react */
+    .Logo-react{
+        position: absolute;
+
+        top: 48px;
+        left: 500px;
+
+        background-image: url("../picture-teaser/react.svg");
+        background-size: cover;
+
+        width: 120px;
+        height: 100px;
+
+        transform: scale(0,0);
+        animation: animate-react 2s linear;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes animate-react {
+        100%{
+            transform: scale(1.03,1.03);
+        }
+    }
+}
+
+/* ******************************************************************************************* */
+/* laptop (1920px desktop) */
+@media (min-width: 1280px){
+
+    /* animation-delay: 1s; */
+    .Layout-container{
+        width: 1210px;
+        margin: 0 auto;
+    }
+
+    /* Logo CSS3 */
+    .Logo-css3{
+        position: absolute;
+
+        top: 100px;
+        left: 270px;
+
+        background-image: url("../picture-teaser/css3.png");
+        background-size: cover;
+
+        width: 91px;
+        height: 128px;
+
+        opacity: 0;
+        animation: axis-css3 3s 1 linear 4s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes axis-css3{
+        0%{
+            transform: rotate(0deg) translateX(-270px); 
+        }
+        
+        100%{
+            opacity: 1;
+            transform: rotate(1440deg) translateX(0px);
+        }
+    }
+
+    /* Logo gimp */
+    .Logo-gimp{
+        position: absolute;
+
+        top: 110px;
+        right: 0px;
+
+        background-image: url("../picture-teaser/gimp.png");
+        background-size: cover;
+
+        width: 140px;
+        height: 100px;
+
+
+        opacity: 0;
+        animation: axis-gimp 3s 1 ease-out 3s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes axis-gimp{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(-1020px)
+        }
+    }
+    
+    .Logo-js{
+        position: absolute;
+
+        top: 0px;
+        left: 0px;
+
+        animation: x-axis-js 3s 1 linear;
+        animation-fill-mode: forwards;
+    }
+
+    .Logo-js::after{
+        content: '';
+        display: block;
+
+        background-image: url("../picture-teaser/js.png");
+        background-size: cover;
+
+        width: 90px;
+        height: 90px;
+
+        animation: y-axis-js 3s 1 ease-in;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes x-axis-js {
+        0%{
+            
+            transform: translateX(-300px);
+        }
+        100%{
+            transform: translateX(440px);
+        }
+        
+    }
+
+    @keyframes y-axis-js {
+        0%{
+            transform: translateY(90px);
+            opacity: 0;
+        }
+        50%{
+            transform: translateY(0px);
+        }
+        100%{
+            transform: translateY(120px);
+        }
+    }
+
+    /* Logo HTML5 */
+    .Logo-html5{
+        position: absolute;
+
+        top: 100px;
+        left: 615px;
+
+        animation: x-axis-html 3s 1 linear;
+    }
+
+    .Logo-html5::after{
+        content: '';
+        display: block;
+
+        background-image: url("../picture-teaser/html5.png");
+        background-size: cover;
+
+        width: 90px;
+        height: 128px;
+
+        animation: y-axis-html 3s 1 ease-in;
+    }
+
+    @keyframes x-axis-html {
+        0%{
+            transform: translateX(1000px);
+        }
+    }
+
+    @keyframes y-axis-html {
+        0%{
+            opacity: 0%;
+        }
+        50%{
+            transform: translateY(90px);
+        }
+    }
+
+    /* Logo NPM */
+    .Logo-npm{
+        position: absolute;
+
+        top: 140px;
+        left: 000px;
+
+        background-image: url("../picture-teaser/npm.png");
+        background-size: cover;
+
+        width: 145px;
+        height: 55px;
+
+        opacity: 0;
+        animation: axis-npm 3s 1 ease-out 3s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes axis-npm{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(950px);
+        }
+    }
+
+    /* Logo react */
+    .Logo-react{
+        position: absolute;
+
+        top: 90px;
+        left: 730px;
+
+        background-image: url("../picture-teaser/react.svg");
+        background-size: cover;
+
+        width: 200px;
+        height: 130px;
+
+        transform: scale(0,0);
+
+        animation: animate-reacts 3s 1 linear 4s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes animate-reacts{
+        100%{
+            transform: scale(1.03, 1.03);
+        }
+    }
+}
