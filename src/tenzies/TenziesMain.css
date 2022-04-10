@@ -11,19 +11,6 @@
   justify-content: center;
 }
 
-/* .btn{
-  all: unset;
-  margin: 0 auto;
-  margin-top: 1.3em;
-  margin-bottom: .5em;
-  padding: 0 .8em;
-  font-size: 1.2em;
-  cursor: pointer;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-color:  #E8C1B3;
-} */
-
 .titleParagraph{
   width: 300px;
   margin: 0 auto;
@@ -32,12 +19,6 @@
 }
 
 @media (min-width: 768px){
-
-  /* .btn{
-    margin-top: 1em;
-    padding: 0 1em;
-    font-size: 1.5em;
-  } */
 
   .Tenzie-Game{
     grid-template-rows: 100px 100px; 

@@ -12,7 +12,6 @@ function Homepage(props) {
     /******************************************************* */
      <div className="Layout">
       {/************************************************************* */}
-      {/* <Header toggleLanguage={changeLanguage}/>  */}
       <Teaser />
       <Content currentLanguage={props.language} possibleLanguages={props.languages} menueForSmallInput={props.menueForSmallInput} stylesContentGerman={props.stylesContentGerman} stylesContentEnglish={props.stylesContentEnglish}/>
        {/************************************************************* */}

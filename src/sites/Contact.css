@@ -23,8 +23,6 @@
 
 .FormDiv{ 
     align-self: center;
-    /* width: 280px */
-    /* width: ; */
     width: 90%;
     max-width: 700px;
 }
@@ -40,18 +38,10 @@
 @media (min-width: 500px){
     .FormDiv{ 
         align-self: center;
-        /* justify-self: center; */
-        /* width: 400px */
     }
 }
 
 @media (min-width: 768px){
-
-    .Form-Input,
-    .FormDiv
-    {
-        /* width: 600px; */
-    }
 
     .Form-Textarea{
         height: 10em;
