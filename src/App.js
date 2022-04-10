@@ -17,10 +17,12 @@ export default function App(){
     const [language, setLanguage] = useState(() => languages[0])
 
     const[menueForSmallInput, setMenueForSmallInput] = useState(() => false)
+
+    
     
     useEffect(() => {
       console.log(`Menue outside?: ${menueForSmallInput}`)
-     //irgendwie verhindern dass, dass Ganzeseitemenü unten unten was rausgucken lässt
+     
     },[menueForSmallInput] )
   
     function changeLanguage(){
@@ -40,9 +42,9 @@ export default function App(){
     return(
         <BrowserRouter>
             <Routes>
-                  <Route path="/" element={<Header setMenueForSmallInput={setMenueForSmallInput} stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish} toggleLanguage={changeLanguage}/>}>
-                    <Route exact index element={<Homepage stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
-                    <Route path="myproject" element={<About stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
+                  <Route path="/" element={<Header setMenueForSmallInput={setMenueForSmallInput} menueForSmallInput={menueForSmallInput} stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish} toggleLanguage={changeLanguage}/>}>
+                    <Route exact index element={<Homepage stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish} menueForSmallInput={menueForSmallInput}/>} />
+                    <Route path="myproject" element={<About stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish} menueForSmallInput={menueForSmallInput}/>} />
                     <Route path="*" element={<NoPage stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
                     <Route path="tenzies" element={<TenziesMain stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
                     <Route path="contact" element={<Contact stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />

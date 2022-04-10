@@ -4,13 +4,14 @@
 
 .Layout {
  display: flex;
- /* height: 100vh; */
+ height: 100vh;
  flex-direction: column;
  /* align-items: stretch; */
 }
 
 .Content{
-  padding-top: 20px;
+  /* padding-top: 20px; */
+  padding-bottom: 20px;
   /* margin-bottom: 2e */
 }
 
@@ -24,6 +25,7 @@
   /* opacity: 0.5; */
   flex-basis: 300px;
   flex-grow: 3;
+  /* padding: 0 20px; */
   /* padding-bottom: 1em; */
 }
 
@@ -37,6 +39,28 @@
   margin-bottom: 1em;
 }
 
+.btn{
+  all: unset;
+  margin: 0 auto;
+  margin-top: 1.3em;
+  margin-bottom: .5em;
+  padding: 0 .8em;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color:  #E8C1B3;
+}
+
+@media (min-width: 768px){
+
+  .btn{
+    margin-top: 1em;
+    padding: 0 1em;
+    /* font-size: 1.2em; */
+  }
+}
+
 /* ********************************************* */
 /* Template stuff end*/
 /* ********************************************* */
@@ -44,22 +68,23 @@
 .Header,
 .Content,
 .Footer{
-  padding: 0 25px 1em 25px; 
+  padding: 0 25px; 
 }
 
 @media (min-width: 768px){
-    
-  .Header,
-  .Content{
-      padding: 0 50px;
-  }
 
+  .Header,
+  .Content,
+  .Footer{
+    padding: 0 50px; 
+  }
 }
 
 .Footer{
-  /* background-color:  #AD81B2; */
   background-color: #83e0be;
   flex-basis: 60px;
+  padding-top: 25px;
+  /* z-index: 10; */
 }
 
 .NoPage-Content{
@@ -68,5 +93,9 @@
 }
 
 .active{
-  border-bottom: 1px solid black;
+  color:#ad81b2ff;
+}
+
+.Content{
+  padding-bottom: 1em;
 }

@@ -1,8 +1,22 @@
+import {useEffect, useRef} from 'react';
 
 function Content(props) {
 
+  const refMenueOpen = useRef(null);
+
+  useEffect(()=>{
+    console.log(`windows screen width: ${window.screen.width}`);
+   if(window.screen.width < 1280 && props.menueForSmallInput === true){
+       refMenueOpen.current.style.display = 'none';
+      //  console.log('styleInput' + styleInput)
+    } else {
+   refMenueOpen.current.style.display = 'block';
+      // console.log('styleInput' + styleInput)
+   }
+}, [props.menueForSmallInput]);
+
   return (
-    <div className="Main-Content" id="mainContent">
+    <div className="Main-Content" ref={refMenueOpen}>
       <section className="Content" style={props.stylesContentGerman}>
         <p>Hallo ihr Runkelrüben</p>
         <p>Ich heiße Juliette und ich bin Frontend-Entwicklerin.</p>

@@ -66,22 +66,25 @@ function TenziesMain(props) {
     }
     
   return (
-    <div className="Layout">
+    // className="Layout"
+    <div className="Layout" >
      
       <div className="TenziesMain Main-Content">
       {win && <Confetti />}
-      <h1>Tenzies</h1>
+      <h1 className="Template-Headline">Tenzies</h1>
       <p className='titleParagraph' style={props.stylesContentGerman}>Rollen Sie, bis alle Würfel gleich sind. Klicken Sie auf jeden Würfel, um ihn zwischen den Würfen auf seinem aktuellen Wert einzufrieren.</p>
       <p className='titleParagraph' style={props.stylesContentEnglish}>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-      <div className="Tenzie-Game">
-        {
-          myNumbers.map(numb => <Tenzie num={numb.number} key={numb.id} isActive={numb.isActive} onClick={() => toggle(numb.id)} />)
-        }
-        
+      {/* <div className='TenzieResize'> */}
+        <div className="Tenzie-Game">
+          {
+            myNumbers.map(numb => <Tenzie num={numb.number} key={numb.id} isActive={numb.isActive} onClick={() => toggle(numb.id)} />)
+          }
+          
+        </div>
+        <button className="btn" onClick={controlButton} style={props.stylesContentGerman}>{win ? 'Start again': 'Neu'}</button>
+        <button className="btn" onClick={controlButton} style={props.stylesContentEnglish}>{win ? 'Start again': 'Roll'}</button>
       </div>
-      <button className="btn" onClick={controlButton} style={props.stylesContentGerman}>{win ? 'Start again': 'Neu'}</button>
-      <button className="btn" onClick={controlButton} style={props.stylesContentEnglish}>{win ? 'Start again': 'Roll'}</button>
-      </div>
+      {/* </div> */}
       <Footer /> 
     </div>
   );

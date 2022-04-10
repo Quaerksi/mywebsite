@@ -14,60 +14,49 @@ export default function Contact(){
         formData.append('name', datas.name);
         formData.append('email', datas.email);
         formData.append('message', datas.message);
-        // formData.append('nice', nice)
-
-        // formData.append('name', 'Klara');
-        // formData.append('email', 'klara@gmail.com');
-        // formData.append('message', 'Hallo');
 
 
-        // console.log(datas);
-        // var dataForSend ={
-        //     'name': datas.name,
-        //     'email': datas.email,
-        //     'message': datas.message,
-        // }
-        
-        // var dataForSend ={
-        //     'name': 'Klara',
-        //     'email': 'klara@bus.de',
-        //     'message': 'Hallo lödföhn',
-        // }
-
-        //POST data to the php file
-        try{
-            // axios({
-            //     url: "https://salevsky.net/mail.php",   
-            //     data: formData,
-            //     method: 'post',
-            //     // headers: {'Access-Control-Allow-Origin': '*'},
-            //     headers: { 'Content-Type': 'multipart/form-data' },
-            //    // headers: { "Content-Type": "multipart/x-www-form-urlencoded" },
-
-            // })
-
-            //senditaway.php!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            axios.post('https://salevsky.net/senditaway.php', formData, {
+        axios.post('https://salevsky.net/senditaway.php', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
-            });
-        } catch(error) {
-            // console.log(err.response.data)
-            let e = error;
-            if (error.response) {
-                 e = error.response.data;                   // data, status, headers
-            if (error.response.data && error.response.data.error) {
-                e = error.response.data.error;           // my app specific keys override
-            }
-            } else if (error.message) {
-                e = error.message;
-            } else {
-                e = "Unknown error occured";
-            }
-            console.log('Error: ' + e);
-        }      
-    }
+            }).then(()=> {
+                document.getElementById('Input-Name').value = '';
+                document.getElementById('Input-Email').value = '';
+                document.getElementById('Input-textarea').value = '';
+                document.getElementById('On-Success').innerHTML = 'Email got send';
+            })
+            .catch(error => console.log(`Post error: ${error}`));
+
+    //     try{
+    //         //senditaway.php!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //         axios.post('https://salevsky.net/senditaway.php', formData, {
+    //         headers: {
+    //             'Content-Type': 'multipart/form-data'
+    //         }
+    //         });
+    //         document.getElementById('Input-Name').value = '';
+    //         document.getElementById('Input-Email').value = '';
+    //         document.getElementById('Input-textarea').value = '';
+    //         document.getElementById('On-Success').value = 'Email got send';
+            
+
+    //     } catch(error) {
+    //         // console.log(err.response.data)
+    //         let e = error;
+    //         if (error.response) {
+    //              e = error.response.data;                   // data, status, headers
+    //         if (error.response.data && error.response.data.error) {
+    //             e = error.response.data.error;           // my app specific keys override
+    //         }
+    //         } else if (error.message) {
+    //             e = error.message;
+    //         } else {
+    //             e = "Unknown error occured";
+    //         }
+    //         console.log('Error: ' + e);
+    //     }      
+ }
 
 
     const handleError = (errors) => {
@@ -93,19 +82,22 @@ export default function Contact(){
     //   const message = watch('message') || "";
     //   console.log(`Message ${message.length}`)
 
+    
+
     return(
         <div className="Layout">
             <div className="Main-Content Content">
-                <h1 className="Template-Headline">Contact</h1>
+                <h1 className="Template-Headline Contact-Headline">Contact</h1>
                 <form id="contact-form" onSubmit={handleSubmit(onSubmit,  handleError )}>
                     <br/>
+                    <p id="On-Success"></p>
                     <div> 
                         <label>Name </label>
                         <small className="Text-danger">
                             {errors?.name && errors.name.message}
                         </small>
                         <br/>
-                        <input name="user-name" type="text"  className="Form-Input" {...register('name', registerOptions.name)} placeholder="Name" />
+                        <input name="user-name" type="text"  className="Form-Input" id="Input-Name" {...register('name', registerOptions.name)} placeholder="Name" />
                     </div>
                     <br />
                     <div>
@@ -114,7 +106,7 @@ export default function Contact(){
                             {errors?.email && errors.email.message}
                         </small>
                         <br/>
-                        <input name="user-email" type="email" className="Form-Input"{...register('email', registerOptions.email)} placeholder="Email" />   
+                        <input name="user-email" type="email" className="Form-Input" id="Input-Email"{...register('email', registerOptions.email)} placeholder="Email" />   
                     </div>
                     <br />
                     <div>
@@ -123,10 +115,9 @@ export default function Contact(){
                             {errors?.message && errors.message.message}
                         </small>
                         <br/>
-                        <textarea name="message" className="Form-Textarea" {...register('message', registerOptions.message)} placeholder="Message" />
-                        
+                        <textarea name="message" className="Form-Textarea" id="Input-textarea" {...register('message', registerOptions.message)} placeholder="Message" />
                     </div>
-                    <input className="Form-Input" type="submit" value="send" />
+                    <input className="btn" type="submit" value="send" />
                 </form>
             </div>
             <Footer />
