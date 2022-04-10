@@ -33,7 +33,8 @@ export default function About(props){
                             Ich hoste auf Strato. Auf einem php driven Apache Server. Um beim Neuladen einer
                             Seite, folgende Fehlermeldung zu verweiden: "The requested URL was not found on this server.",
                             werde ich Ordner mit, kurzen PHP Scripts einbringen, welche auf die Hauptseite weiterleiten.
-                            Perspektive: Anderen Provider suchen und mit Node.js eigenen Server mit express aufsetzen.
+                            To DO: Anderen Provider suchen und mit Node.js eigenen Server mit express aufsetzen.
+                            Work Arround: Forwarding mittels PHP
                         </p>
                     </div>
                     <div>
