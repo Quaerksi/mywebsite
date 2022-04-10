@@ -1,14 +1,22 @@
 import "./Contact.css";
 import Footer from '../modules/Footer.js';
 import {useForm} from "react-hook-form";
+import {useEffect} from 'react';
 import axios from "axios";
 
 
-export default function Contact(){
+export default function Contact(props) {
 
+    //clear form data by clicking tab contact
+    useEffect(()=> {
+        document.getElementById('Input-Name').value = '';
+        document.getElementById('Input-Email').value = '';
+        document.getElementById('Input-textarea').value = '';
+    });
+    
     const {register, handleSubmit, formState: {errors}/*, watch */} = useForm();
-    // var dataForSend;
 
+    //pack form data
     const onSubmit = datas => {
         const formData = new FormData();
         formData.append('name', datas.name);
@@ -23,44 +31,12 @@ export default function Contact(){
             }).then(()=> {
                 document.getElementById('Input-Name').value = '';
                 document.getElementById('Input-Email').value = '';
-                document.getElementById('Input-textarea').value = '';
-                document.getElementById('On-Success').innerHTML = 'Email got send';
+                document.getElementById('Input-textarea').value = 'Email got send';
             })
             .catch(error => console.log(`Post error: ${error}`));
-
-    //     try{
-    //         //senditaway.php!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    //         axios.post('https://salevsky.net/senditaway.php', formData, {
-    //         headers: {
-    //             'Content-Type': 'multipart/form-data'
-    //         }
-    //         });
-    //         document.getElementById('Input-Name').value = '';
-    //         document.getElementById('Input-Email').value = '';
-    //         document.getElementById('Input-textarea').value = '';
-    //         document.getElementById('On-Success').value = 'Email got send';
-            
-
-    //     } catch(error) {
-    //         // console.log(err.response.data)
-    //         let e = error;
-    //         if (error.response) {
-    //              e = error.response.data;                   // data, status, headers
-    //         if (error.response.data && error.response.data.error) {
-    //             e = error.response.data.error;           // my app specific keys override
-    //         }
-    //         } else if (error.message) {
-    //             e = error.message;
-    //         } else {
-    //             e = "Unknown error occured";
-    //         }
-    //         console.log('Error: ' + e);
-    //     }      
- }
-
-
+        }
     const handleError = (errors) => {
-        // console.log(`Errors ${errors.name.type}`)
+            console.log(`Errors on submit ${errors.name.type}`)
     };
 
     const registerOptions = {
@@ -83,15 +59,14 @@ export default function Contact(){
     //   console.log(`Message ${message.length}`)
 
     
-
     return(
         <div className="Layout">
             <div className="Main-Content Content">
-                <h1 className="Template-Headline Contact-Headline">Contact</h1>
-                <form id="contact-form" onSubmit={handleSubmit(onSubmit,  handleError )}>
+            <h1 className="Template-Headline Contact-Headline" style={props.stylesContentGerman}>Kontakt</h1>
+                <h1 className="Template-Headline Contact-Headline" style={props.stylesContentEnglish}>Contact</h1>
+                <form className="ContactForm" onSubmit={handleSubmit(onSubmit,  handleError )}>
                     <br/>
-                    <p id="On-Success"></p>
-                    <div> 
+                    <div className="FormDiv"> 
                         <label>Name </label>
                         <small className="Text-danger">
                             {errors?.name && errors.name.message}
@@ -100,7 +75,7 @@ export default function Contact(){
                         <input name="user-name" type="text"  className="Form-Input" id="Input-Name" {...register('name', registerOptions.name)} placeholder="Name" />
                     </div>
                     <br />
-                    <div>
+                    <div className="FormDiv">
                         <label>E-Mail </label>
                         <small className="Text-danger">
                             {errors?.email && errors.email.message}
@@ -109,8 +84,8 @@ export default function Contact(){
                         <input name="user-email" type="email" className="Form-Input" id="Input-Email"{...register('email', registerOptions.email)} placeholder="Email" />   
                     </div>
                     <br />
-                    <div>
-                        <label>Message </label>
+                    <div className="FormDiv">
+                        <label>Message</label>
                         <small className="Text-danger">
                             {errors?.message && errors.message.message}
                         </small>
@@ -118,9 +93,9 @@ export default function Contact(){
                         <textarea name="message" className="Form-Textarea" id="Input-textarea" {...register('message', registerOptions.message)} placeholder="Message" />
                     </div>
                     <input className="btn" type="submit" value="send" />
-                </form>
+                </form> 
             </div>
-            <Footer />
+            <Footer stylesContentGerman={props.stylesContentGerman} stylesContentEnglish={props.stylesContentEnglish}/>
         </div>
     )
 }

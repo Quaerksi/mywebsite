@@ -16,7 +16,7 @@ function Homepage(props) {
       <Teaser />
       <Content currentLanguage={props.language} possibleLanguages={props.languages} menueForSmallInput={props.menueForSmallInput} stylesContentGerman={props.stylesContentGerman} stylesContentEnglish={props.stylesContentEnglish}/>
        {/************************************************************* */}
-      <Footer /> 
+      <Footer stylesContentGerman={props.stylesContentGerman} stylesContentEnglish={props.stylesContentEnglish}/> 
   </div>
   );
 }

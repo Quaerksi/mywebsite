@@ -10,7 +10,7 @@ export default function NoPage(props){
                     <p style={props.stylesContentGerman}>Seite nicht gefunden</p>
                 </div> 
             </div>
-            <Footer /> 
+            <Footer stylesContentGerman={props.stylesContentGerman} stylesContentEnglish={props.stylesContentEnglish}/> 
         </div>
         
     )

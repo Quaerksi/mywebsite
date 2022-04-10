@@ -35,8 +35,12 @@
 
 .Template-Headline{
   padding-top: 130px;
-  margin: 0px;
-  margin-bottom: 1em;
+  margin: 1em 0 2em 0;
+  text-align: center;
+}
+
+.HeadlineHomepage{
+  margin-top: 1.3em;
 }
 
 .btn{
@@ -55,7 +59,7 @@
 @media (min-width: 768px){
 
   .btn{
-    margin-top: 1em;
+    margin-top: 1.5em;
     padding: 0 1em;
     /* font-size: 1.2em; */
   }

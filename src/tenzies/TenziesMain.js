@@ -85,7 +85,7 @@ function TenziesMain(props) {
         <button className="btn" onClick={controlButton} style={props.stylesContentEnglish}>{win ? 'Start again': 'Roll'}</button>
       </div>
       {/* </div> */}
-      <Footer /> 
+      <Footer stylesContentGerman={props.stylesContentGerman} stylesContentEnglish={props.stylesContentEnglish}/> 
     </div>
   );
 }
