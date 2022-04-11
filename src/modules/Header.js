@@ -1,9 +1,56 @@
 import './Header.css';
 import {Outlet, Link} from "react-router-dom";
 import SiteLinksIntern from './SiteLinksIntern';
+import {useState, useEffect, useRef} from 'react'
+
+// fn is function to handle
+//ms is time to wait
+function debounce(fn, ms = 30){
+  let timer
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout( _ => {
+       timer = null
+       fn.apply(this, arguments)
+      }, ms)
+  };
+}
 
 function Header(props) {
-  
+
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
+
+  const refMenu = useRef(null);
+
+  function handleResize(){
+    setDimensions({
+      height: window.innerHeight,
+      width: window.innerWidth
+    })
+  }
+
+  let menuDisappear = () => refMenu.current.style.left = '-250vw';
+  let menuAppear = () => refMenu.current.style.left = '0';
+  let changeState = () => props.setMenueForSmallInput(state => !state);
+
+  useEffect(() =>{
+        const debounceHandleResize = debounce(handleResize);
+        console.log(`Window height: ${dimensions.height}, Window with ${dimensions.width}`);
+
+        if(dimensions.width > 1280 && props.menueForSmallInput === true){
+          changeState()
+          menuDisappear();
+        }
+
+        window.addEventListener('resize', debounceHandleResize);
+    
+        return ()=> { window.removeEventListener('resize', debounceHandleResize);
+    }
+  })
+ 
   function toggle(){
     let elemToggle = document.getElementById('Toggler');
 
@@ -11,34 +58,25 @@ function Header(props) {
     props.toggleLanguage();
   }
 
-  let styles = {
-    // display: activeMenu ? 'block' : 'none' 
-    // left: 100vw,
-  }
-
+  //toggle menu on small screens
   function toggleMenu(){ 
-    
-      var move = document.getElementById('move');
+
+    if(dimensions.width < 1280 ){
 
       if(props.menueForSmallInput === false){
-        move.style.left = '0';
+        menuAppear();
       }
       if(props.menueForSmallInput === true){
-        move.style.left = '-250vw';
+        menuDisappear();
       }
-
-      // if(window.screen.width < 1280 ){
-        // setActiveMenu(state => !state);
-        props.setMenueForSmallInput(state => !state);
-      // }
-      
-    // }
-    
-  }
+      // change state
+      changeState();
+      }
+    }
 
   return (
     <>
-    <div className="ShowMenu" id="move" style={styles}>
+    <div className="ShowMenu" ref={refMenu}>
            <button className="MenuCloseX" id="MenuCloseX" onClick={toggleMenu}> &#10006;</button>
            <section className="SectionSites">
              <SiteLinksIntern  stylesContentEnglish={props.stylesContentEnglish} stylesContentGerman={props.stylesContentGerman} toggleMenu={toggleMenu}/>

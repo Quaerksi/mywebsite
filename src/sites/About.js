@@ -102,15 +102,13 @@ export default function About(props){
                     <div style={props.stylesContentGerman}>
                     <h3 className="H3-About">6. Beim Bildschirmgröße verringern klappt das Menü selbstständig aus</h3>
                         <p className="Grid-Item-About P-About">
-                            Der Zustand, ob das Fullsite Menü ausgefahren ist, wird über einen Toggler erfasst.<br/>
-                            TO DO: Zustandshaltendes Objekt einfügen                        
+                            Behoben: Listener für Bildschirmgröße eingefügt mit Debouncer.                       
                         </p>
                     </div>
                     <div style={props.stylesContentEnglish}>
                     <h3 className="H3-About">6. When reducing the screen size, the menu folds out automatically</h3>
                         <p className="Grid-Item-About P-About">
-                            The status of whether the full-site menu is extended is recorded using a toggle.<br/>
-                            TO DO: Insert state-keeping object                        
+                            Fixed: With Listener for Screensize with debounce.                      
                         </p>
                     </div>
                     <div style={props.stylesContentGerman}>
