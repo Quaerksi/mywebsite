@@ -6,7 +6,7 @@ function Content(props) {
 
   //let content disappear for full site menu
   useEffect(()=>{
-   if(window.screen.width < 1280 && props.menueForSmallInput === true){
+   if(window.innerWidth < 1280 && props.menueForSmallInput === true){
        refMenueOpen.current.style.display = 'none';
     } else {
       refMenueOpen.current.style.display = 'block';

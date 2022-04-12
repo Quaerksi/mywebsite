@@ -8,7 +8,8 @@ export default function About(props){
 
     //let content disappear for full site menu
     useEffect(()=>{
-        if(window.screen.width < 1280 && props.menueForSmallInput === true){
+        console.log(`menue open? ${props.menueForSmallInput}`)
+        if(window.innerWidth < 1280 && props.menueForSmallInput === true){
             refMenueOpen.current.style.display = 'none';
          } else {
             refMenueOpen.current.style.display = 'block';
@@ -85,7 +86,7 @@ export default function About(props){
                             Das Menü ist in den Header eingebaut. Dies bringt bei der Ansicht auf kleinen Seiten das Problem, 
                             dass das Menü nur einen Teil des Bildschirms bedeckt. <br/>
                             Momentane Lösung: Content mit useEffekt und useRef ausblenden. So ist gesichert, dass das Menü voll sichtbar ist. 
-                            Transition muss jetzt leider raus. <br/>
+                            Leider muss Transition raus und Code wiederholt sich. <br/>
                             TO DO: Das Menü im Seitentemplate einbauen und mittels useEffect ansteuern. <br/> 
                         </p>
                     </div>
@@ -95,7 +96,7 @@ export default function About(props){
                             The menu is built into the header. This causes the problem when viewing small pages,
                             that the menu only covers part of the screen. <br/>
                             Current solution: Hide content with useEffect and useRef. This ensures that the menu is fully visible.
-                            Unfortunately, Transition has to go now. <br/>
+                            Unfortunately, Transition has to go now and code repeats itself. <br/>
                             TO DO: Install the menu in the site template and control it using useEffect.<br/> 
                         </p>
                     </div>
