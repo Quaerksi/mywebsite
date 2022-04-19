@@ -1,6 +1,6 @@
 import {useEffect, useRef} from 'react';
 
-function Content(props) {
+function HomepageContent(props) {
 
   const refMenueOpen = useRef(null);
 
@@ -66,4 +66,4 @@ function Content(props) {
   );
 }
 
-export default Content;
+export default HomepageContent;

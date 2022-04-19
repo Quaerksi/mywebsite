@@ -7,7 +7,7 @@ import TenziesMain from './tenzies/TenziesMain';
 import Contact from './sites/Contact'
 
 // import { useEffect, useState } from 'react';
-import { useState, useEffect } from 'react';
+import { useState /*, useEffect */} from 'react';
 
 export default function App(){
 
@@ -18,12 +18,9 @@ export default function App(){
 
     const[menueForSmallInput, setMenueForSmallInput] = useState(() => false)
 
-    
-    
-    useEffect(() => {
-      console.log(`Menue outside?: ${menueForSmallInput}`)
-     
-    },[menueForSmallInput] )
+    // useEffect(() => {
+    //   console.log(`Menue outside?: ${menueForSmallInput}`) 
+    // },[menueForSmallInput] )
   
     function changeLanguage(){
       language === languages[0] ? setLanguage(()=>languages[1]) :  setLanguage(()=>languages[0]);
@@ -48,7 +45,6 @@ export default function App(){
                     <Route path="*" element={<NoPage stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
                     <Route path="tenzies" element={<TenziesMain stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
                     <Route path="contact" element={<Contact stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
-                    {/* <Route path='snakegame' component={() => {window.location.href = 'http://snake-game.salevsky.net/'; return null;}}/> */}
                 </Route>
             </Routes>
         </BrowserRouter>

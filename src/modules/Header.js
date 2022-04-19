@@ -3,7 +3,7 @@ import {Outlet, Link} from "react-router-dom";
 import SiteLinksIntern from './SiteLinksIntern';
 import {useState, useEffect, useRef} from 'react'
 
-// fn is function to handle
+// debouncer for window size releod
 //ms is time to wait
 function debounce(fn, ms = 30){
   let timer
@@ -18,12 +18,11 @@ function debounce(fn, ms = 30){
 
 function Header(props) {
 
+  //state for window size
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth
   })
-
-  const refMenu = useRef(null);
 
   function handleResize(){
     setDimensions({
@@ -32,13 +31,15 @@ function Header(props) {
     })
   }
 
+  const refMenu = useRef(null);
+
   let menuDisappear = () => refMenu.current.style.left = '-250vw';
   let menuAppear = () => refMenu.current.style.left = '0';
   let changeState = () => props.setMenueForSmallInput(state => !state);
 
   useEffect(() =>{
         const debounceHandleResize = debounce(handleResize);
-        console.log(`Window height: ${dimensions.height}, Window with ${dimensions.width}`);
+        // console.log(`Window height: ${dimensions.height}, Window with ${dimensions.width}`);
 
         if(dimensions.width > 1280 && props.menueForSmallInput === true){
           changeState()
@@ -50,13 +51,6 @@ function Header(props) {
         return ()=> { window.removeEventListener('resize', debounceHandleResize);
     }
   })
- 
-  function toggle(){
-    let elemToggle = document.getElementById('Toggler');
-
-    elemToggle.classList.toggle('TogglerRight')
-    props.toggleLanguage();
-  }
 
   //toggle menu on small screens
   function toggleMenu(){ 
@@ -74,6 +68,14 @@ function Header(props) {
       }
     }
 
+  //toggle language
+  function toggle(){
+    let elemToggle = document.getElementById('Toggler');
+
+    elemToggle.classList.toggle('TogglerRight')
+    props.toggleLanguage();
+  }
+
   return (
     <>
     <div className="ShowMenu" ref={refMenu}>
@@ -90,8 +92,8 @@ function Header(props) {
       
       <div className="ToggleButton" onClick={toggle}>
           <div id="Toggler" className="Toggler"></div>
-       </div>
-       <div className="Menu" onClick={toggleMenu}> &#9776; </div>     
+      </div>
+      <div className="Menu" onClick={toggleMenu}> &#9776; </div>     
     </div>
     <Outlet />
     </>
