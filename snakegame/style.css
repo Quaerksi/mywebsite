@@ -1,7 +1,7 @@
 body{
     font-family: 'Maven Pro', 'sans-serif';
     font-weight: 500;
-    margin:0;
+    margin: 0;
     min-width: 370px;
     min-height: 570px;
     padding-bottom: 1em;
@@ -15,14 +15,15 @@ body{
     box-sizing: border-box;
     height: 100vh;
     /* border: 30px solid #AD81B2;  */
-    border: 30px solid #83e0be;   
+    border-top: 30px solid #83e0be;   
+    border-bottom: 30px solid #83e0be;  
 }
 
 /************Layout******************/
 
 h1{
     margin: 0;
-    margin-top: 0.5em;
+    margin-top: 1em;
 }
 
 h2{
@@ -38,7 +39,13 @@ p{
     justify-self: center;
 }
 
-.backToHomeButton,
+@media(min-height: 730px) {
+   h1{
+       margin-top: 1.7em;
+   }
+}
+
+/* .backToHomeButton, */
 .restartButton{
     all: unset;
     margin: auto;

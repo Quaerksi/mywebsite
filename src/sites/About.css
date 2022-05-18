@@ -8,8 +8,8 @@
     padding: 0.8em;
 }
 
-.Grid-Item-About:first-child{
-    margin-left: 0;
+.Grid-About:last-child{
+    padding-bottom: 1.2em;
 }
 
 .H3-About{
@@ -22,16 +22,17 @@
   
 /*********** tablet ***********/
 @media (min-width: 768px) and (max-width: 1279px){
-    .Grid-About{
-        grid-template-columns: 48% 48%;
-        justify-content: space-between;
-    }
+  
 }
 
 /*********** computer ***********/
 @media (min-width: 1279px){
     .Grid-About{
-        grid-template-columns: 32% 32% 32%;
-        justify-content: space-between;
+        /* grid-template-columns: 32% 32% 32%; */
+        /* grid-template-columns: 77%; */
+        /* align-self: center; */
+        /* justify-content: space-between; */
+        width: 77%;
+        margin: 0 auto;
     }
 }

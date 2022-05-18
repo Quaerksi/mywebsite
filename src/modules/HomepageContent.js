@@ -18,49 +18,40 @@ function HomepageContent(props) {
       <section className="Content" style={props.stylesContentGerman}>
         <h1 className="HeadlineHomepage">Hallo Leute</h1>
         <h3>Willkommen auf meiner Homepage</h3>
-        <p>Diese responsive Internetseite besteht aus HTML, CSS und JavaScript, eingebetet in die
-          React.</p>
-        <p>Die Quelldateien findet ihr auf meinem <a href="https://github.com/Quaerksi/mywebsite">GitHub Account</a>.</p>
-        <p>Ich arbeite mit folgenden Versionen:</p>
+        <p>Sie ist responsiv und mit React erstellt.</p>
+        <p>Die Quelldateien findet ihr auf meinem <a href="https://github.com/Quaerksi/" target="blank">GitHub Account</a>.</p>
+        <p>Diese Website wurde mit folgenden Technologien erstellt:</p>
         <ul>
           <li>Java Script ES6</li>
-          <li>HTML 5</li>
-          <li>CSS 3</li>
-          <li>PHP 8.1.4</li>
-          <li>NPM 8.5.0</li>
-          <li>GIT 2.35.1</li>
-          <li>Visual Studio Code 1.65.2</li>
-          <br></br>
-          <li>Win 10</li>
-          <li>Google Chrome 100</li>
-          <li>Firefox 99</li>
-          <li>Gimp 2.10.22</li>
-          <li>Notepad 8.1.7</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>PHP</li>
+          <li>NPM</li>
+          <li>Git</li>
+          <li>Visual Studio Code</li>
+          <li>Gimp</li>
+          <li>Notepad</li>
         </ul>
-        <p>Diese Webseite läuft auf Strato Hosting Plus mit einem PHP/8.0.17 Apache/2.4.53 (Unix) Server.</p>
+        <p>Sie läuft auf Strato Hosting Plus mit einem PHP Apache Unix Server.</p>
       </section>
       <section className="Content" style={props.stylesContentEnglish}>
         <h1 className="Contact-Headline HeadlineHomepage">Hello folks</h1>
         <h3>Welcome to my homepage</h3>
-        <p>This responsive website consists of HTML, CSS and JavaScript embedded in React</p>
-        <p>You can find the source files on my <a href="https://github.com/Quaerksi/mywebsite">GitHub Account</a>.</p>
-        <p>I work with the following versions:</p>
+        <p>It is responsive and built with React.</p>
+        <p>You can find the source files on my <a href="https://github.com/Quaerksi/" target="blank">GitHub Account</a>.</p>
+        <p>The website was created using the following technologies:</p>
         <ul>
           <li>Java Script ES6</li>
-          <li>HTML 5</li>
-          <li>CSS 3</li>
-          <li>PHP 8.1.4</li>
-          <li>NPM 8.5.0</li>
-          <li>GIT 2.35.1</li>
-          <li>Visual Studio Code 1.65.2</li>
-          <br></br>
-          <li>Win 10</li>
-          <li>Google Chrome 100</li>
-          <li>Firefox 99</li>
-          <li>Gimp 2.10.22</li>
-          <li>Notepad 8.1.7</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>PHP</li>
+          <li>NPM</li>
+          <li>Git</li>
+          <li>Visual Studio Code</li>
+          <li>Gimp</li>
+          <li>Notepad</li>
         </ul>
-        <p>This website runs on Strato Hosting Plus with a PHP/8.0.17 Apache/2.4.53 (Unix) Server.</p>
+        <p>It runs on Strato Hosting Plus with a PHP Apache Unix Server.</p>
       </section>   
     </div>
   );

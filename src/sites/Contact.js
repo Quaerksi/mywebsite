@@ -65,34 +65,38 @@ export default function Contact(props) {
             <h1 className="Template-Headline Contact-Headline" style={props.stylesContentGerman}>Kontakt</h1>
                 <h1 className="Template-Headline Contact-Headline" style={props.stylesContentEnglish}>Contact</h1>
                 <form className="ContactForm" onSubmit={handleSubmit(onSubmit,  handleError )}>
-                    <br/>
+                    
                     <div className="FormDiv"> 
-                        <label>Name </label>
+                        <label style={props.stylesContentGerman}>Name </label>
+                        <label style={props.stylesContentEnglish}>name</label>
                         <small className="Text-danger">
                             {errors?.name && errors.name.message}
                         </small>
-                        <br/>
+                        
                         <input name="user-name" type="text"  className="Form-Input" id="Input-Name" {...register('name', registerOptions.name)} placeholder="Name" />
                     </div>
-                    <br />
+                    
                     <div className="FormDiv">
-                        <label>E-Mail </label>
+                        <label style={props.stylesContentGerman}>E-Mail </label>
+                        <label style={props.stylesContentEnglish}>e-mail </label>
                         <small className="Text-danger">
                             {errors?.email && errors.email.message}
                         </small>
-                        <br/>
-                        <input name="user-email" type="email" className="Form-Input" id="Input-Email"{...register('email', registerOptions.email)} placeholder="Email" />   
+                        
+                        <input name="user-email" type="email" className="Form-Input" id="Input-Email"{...register('email', registerOptions.email)} placeholder="E-Mail" />   
                     </div>
-                    <br />
+                    
                     <div className="FormDiv">
-                        <label>Message</label>
+                        <label style={props.stylesContentGerman}>Nachricht</label>
+                        <label className="P-Contact" style={props.stylesContentEnglish}>message</label>
                         <small className="Text-danger">
                             {errors?.message && errors.message.message}
                         </small>
-                        <br/>
+                        
                         <textarea name="message" className="Form-Textarea" id="Input-textarea" {...register('message', registerOptions.message)} placeholder="Message" />
                     </div>
-                    <input className="btn" type="submit" value="send" />
+                    <input style={props.stylesContentGerman} className="btn" type="submit" value="absenden" />
+                    <input style={props.stylesContentEnglish} className="btn" type="submit" value="send" />
                 </form> 
             </div>
             <Footer stylesContentGerman={props.stylesContentGerman} stylesContentEnglish={props.stylesContentEnglish}/>

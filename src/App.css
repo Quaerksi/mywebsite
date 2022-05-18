@@ -79,8 +79,8 @@
 
 .Footer{
   background-color: #83e0be;
-  flex-basis: 60px;
-  padding-top: 25px;
+  padding-top: .5em;
+  padding-bottom: .5em;
 }
 
 .NoPage-Content{
@@ -90,8 +90,4 @@
 
 .active{
   color:#ad81b2ff;
-}
-
-.Content{
-  padding-bottom: 1em;
 }
