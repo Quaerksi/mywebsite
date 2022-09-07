@@ -1,6 +1,9 @@
+
+
 .Header{
-    background-color: #83e0be;
-    position: fixed;
+    /* background-color: #83e0be; */
+     background:  rgb(230, 248, 219);
+   position: fixed;
 
     height: 90px;
     left:0;
@@ -98,7 +101,8 @@
     box-sizing: border-box;
     position: absolute;
     top:0;
-    background-color: #83e0be;
+    /* background-color: #83e0be; */
+    background-color: rgb(230, 248, 219);
     left: -250vw; 
     /* transition: .5s ease-out; */
     
@@ -107,7 +111,6 @@
     min-height: 100%;
     z-index:11;
 
-    border: 2px solid black;
 }
 
 .MenuCloseX{
@@ -148,7 +151,7 @@
       display: none;
 }
 
-.Link-Snake{
+.Link-Block{
     display: block;
 }
 

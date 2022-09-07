@@ -5,6 +5,7 @@ import About from './sites/About';
 import NoPage from './sites/NoPage';
 import TenziesMain from './tenzies/TenziesMain';
 import Contact from './sites/Contact'
+import ProjectLinks from './sites/ProjectLinks'
 
 // import { useEffect, useState } from 'react';
 import { useState , useEffect} from 'react';
@@ -53,8 +54,9 @@ export default function App(){
                   <Route exact index element={<Homepage stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish} menueForSmallInput={menueForSmallInput}/>} />
                   <Route path="myproject" element={<About stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish} menueForSmallInput={menueForSmallInput}/>} />
                   <Route path="*" element={<NoPage stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
-                  <Route path="tenzies" element={<TenziesMain stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
-                  <Route path="contact" element={<Contact stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish}/>} />
+                  <Route path="tenzies" element={<TenziesMain stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish} menueForSmallInput={menueForSmallInput}/>} />
+                  <Route path="contact" element={<Contact stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish} menueForSmallInput={menueForSmallInput}/>} />
+                  <Route path="projectLinks" element={<ProjectLinks stylesContentGerman={stylesContentGerman} stylesContentEnglish={stylesContentEnglish} menueForSmallInput={menueForSmallInput}/>} />
                 </Route>
             </Routes>
           </ScrollToTop>

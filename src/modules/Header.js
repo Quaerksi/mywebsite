@@ -84,7 +84,7 @@ function Header(props) {
              <SiteLinksIntern  stylesContentEnglish={props.stylesContentEnglish} stylesContentGerman={props.stylesContentGerman} toggleMenu={toggleMenu}/>
            </section>
        </div>
-    <div className="Header">
+    <div className="Header HeaderBackground">
     <Link className="Link BlockTitle" to="/">Juliettes <br/> Block</Link>
       <div className="InternLinks">
         <SiteLinksIntern stylesContentEnglish={props.stylesContentEnglish} stylesContentGerman={props.stylesContentGerman} toggleMenu={toggleMenu}/>

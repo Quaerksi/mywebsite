@@ -1,4 +1,8 @@
 import {useEffect, useRef} from 'react';
+import "../sites/About.css";
+
+// image import
+// import imgNewJob from '../images/newJob.jpg';
 
 function HomepageContent(props) {
 
@@ -14,45 +18,41 @@ function HomepageContent(props) {
 }, [props.menueForSmallInput]);
 
   return (
-    <div className="Main-Content" ref={refMenueOpen}>
-      <section className="Content" style={props.stylesContentGerman}>
-        <h1 className="HeadlineHomepage">Hallo Leute</h1>
-        <h3>Willkommen auf meiner Homepage</h3>
-        <p>Sie ist responsiv und mit React erstellt.</p>
-        <p>Die Quelldateien findet ihr auf meinem <a href="https://github.com/Quaerksi/" target="blank">GitHub Account</a>.</p>
-        <p>Diese Website wurde mit folgenden Technologien erstellt:</p>
-        <ul>
-          <li>Java Script ES6</li>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>PHP</li>
-          <li>NPM</li>
-          <li>Git</li>
-          <li>Visual Studio Code</li>
-          <li>Gimp</li>
-          <li>Notepad</li>
-        </ul>
-        <p>Sie läuft auf Strato Hosting Plus mit einem PHP Apache Unix Server.</p>
+    <div className="Main-Content Content" ref={refMenueOpen}>
+      <div className="Grid-About Grid-About-Homepage">
+      <section className="Content Content-Homepage NoBorder" style={props.stylesContentGerman}>
+        <div className="Hompage-Introduction ">
+          <div>
+            <h1 className="Template-Headline Template-Headline-Homepage">Hallo ihr Lieben</h1>
+            <p>JavaScript programmiere ich. Full Stack. Gerne im Front-End.</p>
+            <p>Ich habe Medieninformatik studiert, erfolgreich eine von Webmasters Europe autorisierte Weiterbildung zum Thema 
+              moderne Webanwendung absolviert und viele Workshops auf Scrimba durchgeabreitet.
+            </p>
+            <p>Bitte schaut euch meine Projekte an, checkt meinen <a href="https://github.com/Quaerksi/" target="blank">GitHub Account</a> 
+            &nbsp;und besucht mein <a href="https://www.linkedin.com/in/link-juliette/" target="blank">LinkedIn</a> Profil.</p>
+            <h4>Ich brenne darauf, ein Unternehmen zu finden, das zu mir passt. In dem ich programmieren und ein wichtiger Teil werden darf.</h4>          
+            <p>Herzliche Grüße Juliette Salevsky</p>
+            </div>
+            <img className="newJob" src={'./images/newJob.jpg'}></img>  
+        </div>
       </section>
-      <section className="Content" style={props.stylesContentEnglish}>
-        <h1 className="Contact-Headline HeadlineHomepage">Hello folks</h1>
-        <h3>Welcome to my homepage</h3>
-        <p>It is responsive and built with React.</p>
-        <p>You can find the source files on my <a href="https://github.com/Quaerksi/" target="blank">GitHub Account</a>.</p>
-        <p>The website was created using the following technologies:</p>
-        <ul>
-          <li>Java Script ES6</li>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>PHP</li>
-          <li>NPM</li>
-          <li>Git</li>
-          <li>Visual Studio Code</li>
-          <li>Gimp</li>
-          <li>Notepad</li>
-        </ul>
-        <p>It runs on Strato Hosting Plus with a PHP Apache Unix Server.</p>
-      </section>   
+      <section className="Content Content-Main NoBorder" style={props.stylesContentEnglish}>
+      <div className="Hompage-Introduction ">
+          <div>
+            <h1 className="Template-Headline Template-Headline-Homepage">Hello, my dears.</h1>
+            <p>I program JavaScript. Full stack. Gladly front end.</p>
+            <p>I studied media informatics, successfully completed a further training course on modern web applications 
+              authorized by Webmasters Europe and worked through many workshops on Scrimba.</p>
+            <p>Please take a look at my projects, check my <a href="https://github.com/Quaerksi/" target="blank">GitHub account</a> 
+            &nbsp;and visit my  <a href="https://www.linkedin.com/in/link-juliette/" target="blank">LinkedIn</a> profil.</p>
+            <h4>I am looking for a company that suits me. In which I can program and become an important part.</h4>          
+            <p>Sincerely, Juliette Salevsky</p>
+            </div>
+            <img className="newJob" src={'./images/newJob.jpg'}></img>  
+        </div>
+      </section> 
+     
+      </div>
     </div>
   );
 }

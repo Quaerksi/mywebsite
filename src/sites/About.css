@@ -1,16 +1,25 @@
 .Grid-About{
     display: grid;
     row-gap: 1em;
+    
 }
 
 .Grid-About > * {
     border: .5px solid gray;
     padding: 0.8em;
+    line-break: strict;
+}
+
+.Grid-About span{
+    
+    line-break: anywhere;
 }
 
 .Grid-About:last-child{
     padding-bottom: 1.2em;
 }
+
+
 
 .H3-About{
     margin-top: 0;
@@ -20,19 +29,18 @@
     margin-bottom: 0;
 }
   
-/*********** tablet ***********/
-@media (min-width: 768px) and (max-width: 1279px){
-  
+.NoBorder{
+    border: none;
 }
 
 /*********** computer ***********/
 @media (min-width: 1279px){
     .Grid-About{
-        /* grid-template-columns: 32% 32% 32%; */
-        /* grid-template-columns: 77%; */
-        /* align-self: center; */
-        /* justify-content: space-between; */
         width: 77%;
         margin: 0 auto;
+    }
+
+    .Grid-About-Homepage{
+        width: 85%
     }
 }

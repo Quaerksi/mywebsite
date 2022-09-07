@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import './TenziesMain.css';
 import Tenzie from './Tenzie.js';
 import {nanoid} from 'nanoid';
@@ -64,12 +64,24 @@ function TenziesMain(props) {
         number.isActive ? number : newRandomObject()
       ))
     }
+
+    const refMenueOpen = useRef(null);
+
+    //let content disappear for full site menu
+    useEffect(()=>{
+        // console.log(`menue open? ${props.menueForSmallInput}`)
+        if(window.innerWidth < 1280 && props.menueForSmallInput === true){
+            refMenueOpen.current.style.display = 'none';
+         } else {
+            refMenueOpen.current.style.display = 'block';
+        }
+     }, [props.menueForSmallInput]);
     
   return (
     // className="Layout"
     <div className="Layout" >
      
-      <div className="TenziesMain Main-Content">
+      <div className="TenziesMain Main-Content"  ref={refMenueOpen}>
       {win && <Confetti />}
       <h1 className="Template-Headline">Tenzies</h1>
       <p className='titleParagraph' style={props.stylesContentGerman}>Rollen Sie, bis alle Würfel gleich sind. Klicken Sie auf jeden Würfel, um ihn zwischen den Würfen auf seinem aktuellen Wert einzufrieren.</p>

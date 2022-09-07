@@ -1,7 +1,7 @@
 import "./Contact.css";
 import Footer from '../modules/Footer.js';
 import {useForm} from "react-hook-form";
-import {useEffect} from 'react';
+import {useEffect, useRef} from 'react';
 import axios from "axios";
 
 
@@ -58,10 +58,21 @@ export default function Contact(props) {
     //   const message = watch('message') || "";
     //   console.log(`Message ${message.length}`)
 
+    const refMenueOpen = useRef(null);
+
+    //let content disappear for full site menu
+    useEffect(()=>{
+        // console.log(`menue open? ${props.menueForSmallInput}`)
+        if(window.innerWidth < 1280 && props.menueForSmallInput === true){
+            refMenueOpen.current.style.display = 'none';
+         } else {
+            refMenueOpen.current.style.display = 'block';
+        }
+     }, [props.menueForSmallInput]);
     
     return(
         <div className="Layout">
-            <div className="Main-Content Content">
+            <div className="Main-Content Content" ref={refMenueOpen}>
             <h1 className="Template-Headline Contact-Headline" style={props.stylesContentGerman}>Kontakt</h1>
                 <h1 className="Template-Headline Contact-Headline" style={props.stylesContentEnglish}>Contact</h1>
                 <form className="ContactForm" onSubmit={handleSubmit(onSubmit,  handleError )}>

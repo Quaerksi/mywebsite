@@ -2,7 +2,7 @@ import './Teaser.css';
 
 function Teaser() {
   return (
-    <div className="Arround">
+    <div>
 
       <div className="Spacer"></div>
       <img className="Teaser-small" src="./images/static-teaser.png" width="100%" alt="static teaser for small screens"/>
