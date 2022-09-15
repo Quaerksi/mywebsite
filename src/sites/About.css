@@ -19,8 +19,6 @@
     padding-bottom: 1.2em;
 }
 
-
-
 .H3-About{
     margin-top: 0;
 }
@@ -44,3 +42,31 @@
         width: 85%
     }
 }
+
+.LinkExtern{
+    width: 1.5rem;
+    aspect-ratio: 1;
+    fill: #4bab88ff;
+}
+
+.LinkExtern-MarginLeft{
+    margin-left: 2rem;
+}
+
+.CustomLink{
+    color: #4bab88ff;
+}
+
+.CustomHeaderLink:active,
+.CustomHeaderLink:hover,
+.CustomLink:active,
+.CustomLink:hover,
+.LinkExtern:hover,
+.LinkExtern:active
+{
+    color: #ad81b2ff;   
+    fill: #ad81b2ff;  
+}
+
+
+

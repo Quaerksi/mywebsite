@@ -28,12 +28,6 @@
   border-radius: 1rem;
 }
 
-
-
-/* .Main-Content-Center{
-  align-self: center;
-} */
-
 .AlignCenter{
   text-align: center;
 }
@@ -73,18 +67,12 @@
 
 @media (min-width: 768px){
 
-  .Template-Headline-Homepage{
-    /* padding-top: 2rem; */
-    /* margin: 0; */
-  }
-
   .btn{
     margin-top: 1.5em;
     padding: 0 1em;
   }    
 }
 
-/* 140 */
 @media (min-width: 110em){
   .Hompage-Introduction{
     flex-direction: row;

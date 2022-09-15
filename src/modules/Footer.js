@@ -3,8 +3,8 @@
 function Footer(props) {
   return (
     <div className="Footer">
-         <p style={props.stylesContentGerman}>Juliette Salevsky April 2022</p>
-         <p style={props.stylesContentEnglish}>Juliette Salevsky 04/2022</p>
+         <p style={props.stylesContentGerman}>&#169; Juliette Salevsky</p>
+         <p style={props.stylesContentEnglish}>&#169; Juliette Salevsky</p>
     </div>
   );
 }
